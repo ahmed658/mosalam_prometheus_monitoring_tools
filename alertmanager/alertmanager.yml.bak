@@ -1,0 +1,12 @@
+route:
+  receiver: 'email'
+  repeat_interval: 1h
+  group_by: [alertname]
+
+receivers:
+  - name: 'email'
+    email_configs:
+      - smarthost: monitoring.mosalam.com:8025
+        from: 'prometheus@mosalam.com'
+        to: 'slack@mailrise.xyz'
+        require_tls: false
